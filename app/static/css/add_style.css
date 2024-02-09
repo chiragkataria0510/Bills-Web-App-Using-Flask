@@ -1,0 +1,248 @@
+/* Body style with backgroud image */
+body{
+    margin-bottom: 0;
+    background: #f7f7f7;
+    margin-bottom: 0;
+}
+
+#welcome-section{
+    margin-top: 8%;
+    margin-bottom: 50px;
+}
+
+/* Form Container */
+.add-item{
+    margin-top: 0;
+    margin-left: 1%;
+    padding-top: 2%;
+    color: black; 
+}
+
+
+/* Form heading */
+h2{
+    font-weight: bold;
+    margin-top: 6%;
+    padding-left: 18%;
+    color: blue; 
+}
+
+
+/*Main Container which contains all Fields */
+.form-group{
+    margin-bottom: 0.5rem;
+}
+
+
+/* Labels of all Fields */
+.col-form-label{
+    padding-left: 0;
+    margin-top: 0;
+    font-weight: bold;
+    text-align: right;
+}
+
+
+/* Additional style of textarea label */
+.note-text{
+    float:left;
+    text-align: right;
+}
+
+
+/* Bill Name , Amount , Due date and repetion number input fields */
+input[type=text], input[type=number], input[type=date]{
+    width: 65%;
+    padding: 8px 18px;
+    margin: 0 0;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.897);
+    border: 1px solid rgba(92, 84, 84, 0.712);
+    box-sizing: border-box;
+}
+input[type=text]:focus, input[type=number]:focus, input[type=date]:focus{
+    background-color: rgba(255, 255, 255, 0.897);
+    outline: none;
+}
+
+
+/* Bill Category and Send notification on input fields */
+#Bill-Category, #Notification-Reminder{
+    width: 65%;
+    padding: 8px 18px;
+    margin: 0 0 0 0;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.897);
+    border: 1px solid rgba(92, 84, 84, 0.712);
+    box-sizing: border-box;
+}
+
+
+/* Repeat and Don't Repeat Radio Buttons */
+.choice-btn{
+    margin: 1% 0 1% 35%;
+    font-weight: bold;
+}
+/* Additional Repetition-Option field for Repeat option */
+#Repetition-Reminder{     
+    width: 65%;
+    padding: 8px 18px;
+    margin: 1%;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.897);
+    border: 1px solid rgba(92, 84, 84, 0.712);
+    box-sizing: border-box;
+}
+
+
+/* Note textarea input field */
+#note-field{
+    width: 65%;
+    padding: 8px 18px;
+    margin: 0 0 0 3px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.897);
+    border: 1px solid rgba(92, 84, 84, 0.712);
+    box-sizing: border-box;
+}
+
+
+/* discard and save buttons */
+.discard-btn{
+    padding: 0.5% 4%;
+    border-radius: 7px;
+    margin: 2% 5% 0 40%;   
+    background: red;
+    color: white;
+}
+.save-btn{
+    padding: 0.5% 5%;
+    border-radius: 7px;
+    margin: 2% 5% 0 1%;    
+    background: blue; 
+    color: white;
+}
+
+.image-div{
+    float: right;
+    width: 90%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.home-image{
+    height:100%;
+    border-radius: 5px;
+    object-fit: cover;
+    width:100%;
+}
+
+
+/* Additional style of Labels of all fields */
+label {
+    display: inline-block;
+    padding: 0 2%;
+    margin: 0;
+}
+
+
+@media (min-width: 789px) and (max-width: 1100px){
+    h2{
+        margin-top: 15%;
+    }
+    .add-item{
+        margin-top: 3%;
+    }
+    input[type=text], input[type=number], input[type=date]{
+        width: 45%;
+    }
+    #Bill-Category, #Notification-Reminder, #Repetition-Reminder, #note-field{
+        width: 45%;
+    }
+}
+
+/* Media query (Responsive for phones) */
+@media (max-width: 768px){
+    h2{
+        margin-top: 15%;
+    }
+
+    /* Form Container */
+    .add-item{
+        margin-top: 5%;
+        margin-left: 5%;
+        padding: 0 0;
+    }
+    /* Form heading */
+    h2{
+        font-weight: bold;
+        margin: 15% 0 2% 0;
+        padding: 3% 2%;
+        font-size: 2rem;
+    }
+    /* Container of all Fields */
+    .form-group{
+        margin-bottom: 1rem;
+    }
+    /* Labels of all Fields */
+    .col-form-label{
+        padding-left: 0;
+        font-size: 1rem;
+        width: 100%;
+        display: inline;
+    }
+    /* Bill Name , Amount , Due date and repetion number input fields */
+    input[type=text], input[type=number], input[type=date]{
+        width: 95%;
+        padding: 16px 32px;
+        margin: 10px 5px;
+        display: inline-block;
+        border: 1px solid rgba(92, 84, 84, 0.712);
+        box-sizing: border-box;
+        font-size: 1rem;
+    }
+    /* Bill Category and Send notification on input fields */
+    /* Additional Repetition-Option field for Repeat option */
+    /* Note textarea input field */
+    #Bill-Category, #Notification-Reminder, #Repetition-Reminder,#note-field{
+        width: 95%;
+        height:8%;
+        padding: 16px 32px;
+        margin: 10px 5px;
+        display: inline-block;
+        border: 1px solid rgba(92, 84, 84, 0.712);
+        box-sizing: border-box;
+        font-size: 1rem;
+    }
+    /* Additional style of textarea label */
+        .note-text{
+            padding:0;
+            float: none;
+        }
+
+
+    /* Repeat and Don't Repeat Radio Buttons Field*/
+    .choice-btn{
+        margin: 1% 0 1% 5%;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+    /* Repeat and Don't Repeat Radio Button Option */
+    .radio-button{
+        height: 1.3rem;
+        width: 1.3rem;
+    }
+
+
+    /* discard and save buttons */
+    .discard-btn, .save-btn{
+        padding: 1% 10%;
+        border-radius: 7px;
+        margin: 2% 0 2% 8%;
+        font-size: 1rem;
+    }
+    
+    .image-div{
+        display: none;
+    }
+}

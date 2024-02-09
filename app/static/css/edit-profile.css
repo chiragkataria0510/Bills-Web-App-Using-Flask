@@ -1,0 +1,134 @@
+body{
+    background: #dbe7f7;
+    font-family: 'Ubuntu';
+}
+
+.container{
+    margin-top: 100px;
+    background: white;
+    padding: 3% 0;
+    box-shadow: 2px 2px 10px #98a1afc7;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+h1{
+    font-weight: bolder;
+    font-size: 40px;
+    color: blue;
+}
+
+.edit-profile-form{
+    padding: 0 8%;
+    text-align: left;
+    font-weight: bold;
+}
+
+label{
+    width:100%;
+}
+
+.edit-profile-btn{
+    padding: 2% 10%;
+    margin: 0 1%;
+}
+
+.cir1{
+    background: rgb(84, 84, 245);
+    height: 300px;
+    width: 300px;
+    position: fixed;
+    top: -5%;
+    right: -5%;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.cir2{
+    background: rgb(84, 84, 245);
+    height: 300px;
+    width: 300px;
+    position: fixed;
+    bottom: -10%;
+    left: -7%;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.cir3{
+    background: rgb(153, 153, 255);
+    height: 350px;
+    width: 350px;
+    position: fixed;
+    top: -5%;
+    right: -5%;
+    border-radius: 50%;
+    z-index: -100;
+}
+
+.cir4{
+    background: rgb(153, 153, 255);
+    height: 350px;
+    width: 350px;
+    position: fixed;
+    bottom: -10%;
+    left: -7%;
+    border-radius: 50%;
+    z-index: -100;
+}
+
+.cir5{
+    background: rgb(196, 196, 253);
+    height: 400px;
+    width: 400px;
+    position: fixed;
+    top: -5%;
+    right: -5%;
+    border-radius: 50%;
+    z-index: -999;
+}
+
+.cir6{
+    background: rgb(196, 196, 253);
+    height: 400px;
+    width: 400px;
+    position: fixed;
+    bottom: -10%;
+    left: -7%;
+    border-radius: 50%;
+    z-index: -999;
+}
+
+.cir7{
+    background: rgb(196, 196, 253);
+    height: 150px;
+    width: 150px;
+    position: fixed;
+    top: 15%;
+    left: 20%;
+    border-radius: 50%;
+    z-index: -999;
+}
+
+.cir8{
+    background: rgb(196, 196, 253);
+    height: 200px;
+    width: 200px;
+    position: fixed;
+    bottom: -15%;
+    right: 40%;
+    border-radius: 50%;
+    z-index: -999;
+}
+
+.cir9{
+    background: rgb(84, 84, 245);
+    height: 150px;
+    width: 150px;
+    position: fixed;
+    bottom: 20%;
+    right: 20%;
+    border-radius: 50%;
+    z-index: -999;
+}
+

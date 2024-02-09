@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+<!-- Link to respective CSS stylesheet -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/edit-profile.css')}}">
+
+{% endblock %}
+
+{% block title %}Bills Reminder- Edit Profile{% endblock %}
+
+{% block body %}
+<div class="container col-lg-6 col-md-6 col-sm-12">
+<div class="page-header">
+    <h1>Edit Your Profile</h1>
+</div>
+<div>
+
+    <form class="form form-horizontal edit-profile-form" method="post" role="form">
+        {{ wtf.form_field(form.name) }}
+        {{ wtf.form_field(form.location) }}
+        {{ wtf.form_field(form.about_me) }}
+        {{ wtf.form_field(form.photo) }}
+        {{ wtf.form_field(form.designation) }}
+        <center>
+        {{ wtf.form_field(form.submit, class="btn btn-success edit-profile-btn") }}
+            <p style="margin-top: 4%;color:red;">WANT TO DELETE YOUR ACCOUNT ? </p>
+            <p style="color:red;">Click the button given below </p>
+        {{ wtf.form_field(form.delete, class="btn btn-danger edit-profile-btn") }}
+        </center>
+      </form>
+</div>
+</div>
+<div class="cir1"></div>
+<div class="cir2"></div>
+<div class="cir3"></div>
+<div class="cir4"></div>
+<div class="cir5"></div>
+<div class="cir6"></div>
+<div class="cir7"></div>
+<div class="cir8"></div>
+<div class="cir9"></div>
+
+
+{% endblock %}

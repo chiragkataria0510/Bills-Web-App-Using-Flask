@@ -1,0 +1,52 @@
+.image-div{
+    float: right;
+    width: 80%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.guide-image{
+    height:50%;
+    border-radius: 5px;
+    width:100%;
+    margin: 20px 0;
+    /* box-shadow: 5px 5px 10px rgb(177, 177, 177); */
+}
+
+h1{
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+h2{
+    font-size: 35px;
+    font-weight: bolder;
+    margin-top: 60px;
+}
+
+.footer-nav{
+    list-style-type: none;
+}
+
+li{
+    text-decoration: none;
+}
+
+.site-footer{
+    background: #d2e1f9;
+    padding: 0;
+}
+
+.grid-spacing-sm{
+    width: 100%;
+}
+
+.footer-div{
+    margin: 0 40px;
+}
+.wrap-size-lg{
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}

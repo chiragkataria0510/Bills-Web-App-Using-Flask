@@ -1,0 +1,73 @@
+h2{
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.accordion {
+    background-color: rgb(42, 42, 179);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: rgb(50, 5, 172);
+    outline: none;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    outline: none;
+}
+
+.active:after {
+    content: "\2212";
+    outline: none;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    outline: none;
+}
+
+.footer-nav{
+    list-style-type: none;
+}
+
+li{
+    text-decoration: none;
+}
+
+.site-footer{
+    background: #d2e1f9;
+    padding: 0;
+}
+
+.grid-spacing-sm{
+    width: 100%;
+}
+
+.footer-div{
+    margin: 0 40px;
+}
+
+.wrap-size-lg{
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}

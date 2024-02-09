@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block head %}
+<!-- Link to respective CSS stylesheet -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/register.css')}}">
+
+{% endblock %}
+{% block body %}
+{% from "_formhelpers.html" import render_field %}
+<div class="container main-container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 2% 4%;">
+                <div class="container" >
+                    <h2><strong>Register</strong>
+                    </h2>
+                    
+                    <form method="POST" class="register-form" style="text-align: left;">
+                    
+                        
+                        {{ render_field(form.name, class="form-control") }}
+                        {{ render_field(form.username, class="form-control") }}
+                        {{ render_field(form.email, class="form-control") }}
+                        {{ render_field(form.phone, class="form-control") }}
+                      <div style="display: flex;">
+                            <div style="width: 48%;padding-right: 2%;">
+                                {{ render_field(form.password, class="form-control") }}
+                            </div>
+                            <div style="width: 50%;">
+                                {{ render_field(form.confirm, class="form-control") }}
+                            </div>
+                      </div>
+                        
+                        <center>
+                        <button type="submit" class="btn btn-primary register-button">Register</button>
+                        </center>
+                    </form>
+                        
+                    
+                    <a href="{{ url_for('auth.login')}}">Login into existing account!</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 0;">
+                <div class="image-div"> 
+                    <img src="../../static/img/register.png" class="home-image" alt="">  
+                    <div class="cir1"></div>
+                    <div class="cir2"></div>
+                    <div class="cir3"></div>
+                    <div class="cir4"></div>
+                    <div class="cir5"></div>
+                    <div class="cir6"></div>
+                </div>   
+            </div>
+        </div>
+    </div>
+{% endblock body %}

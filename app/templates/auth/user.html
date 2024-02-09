@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+
+{% block head %}
+<!-- Link to respective CSS stylesheet -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/user.css')}}">
+
+{% endblock %}
+
+{% block body %}
+{% if current_user.is_authenticated %}
+<div class="jumbotron m-0 row ">
+  
+      
+      <div class="container col-lg-8 col-md-10 col-sm-12 profile-container">
+        {% if user.photo == None %}
+          <img class="img-rounded" src="{{ user.gravatar(size=276) }}" align="left">
+        {% else %}
+          <img class="img-rounded" src="{{ url_for('static',filename=user.photo)}}" align="left">
+        {% endif %}
+          <h1>{{ user.username }}</h1>
+
+        <!-- Name and Location -->
+        {% if user.name or user.location %}
+        <p>{% if user.name %}{{ user.name }}<br>{% endif %}
+            {% if user.location %}
+              <b> From : </b><a href="http://maps.google.com/?q={{ user.location }}">{{ user.location }}</a><br>
+            {% endif %}
+        </p>
+        {% endif %}
+
+        <!-- Mailto for Admin -->
+        {% if current_user.is_administrator() %}
+        <p><b>Email : </b><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+        {% endif %}
+
+        <!-- About Me, Member Since and Last Seen -->
+        {% if user.about_me %}<p><b>About Me : </b>{{ user.about_me }}</p>{% endif %}
+        {% if user.designation %}<p><b>Designation : </b>{{ user.designation }}</p>{% endif %}
+
+        <p><b>Member since :</b> {{ moment(user.member_since).format('L') }}. <br>
+       <b> Last seen : </b>{{ moment(user.last_seen).fromNow() }}.</p>
+        <!-- No of Questions and Answers -->
+        <p>{{ user.posts.count() }} Questions | {{ user.comments.count() }} Answers</p>
+        
+        <p>
+        <!-- Follow Unfollow Button -->
+            {% if current_user.can(Permission.FOLLOW) and user != current_user %}
+                {% if not current_user.is_following(user) %}
+                <a href="{{ url_for('.follow', username=user.username) }}" class="btn btn-primary">Follow</a>
+                {% else %}
+                <a href="{{ url_for('.unfollow', username=user.username) }}" class="btn btn-primary">Unfollow</a>
+                {% endif %}
+            {% endif %}
+
+        <!-- No of Followers and Folloing -->
+            <a  style="margin-right:2%" class="user-anchor" href="{{ url_for('.followers', username=user.username) }}">
+                Followers: <span  class="badge  badge-pill badge-light">{{ user.followers.count()  }}</span></a>
+            <a  class="user-anchor" href="{{ url_for('.followed_by', username=user.username) }}">
+                Following: <span  class="badge  badge-pill badge-light">{{ user.followed.count() }}</span></a>
+            {% if current_user.is_authenticated and user != current_user and user.is_following(current_user) %}
+            | <span class="label label-default">Follows you</span>
+            {% endif %}
+        </p>
+        <p style="margin-top: 3%;">{% if user == current_user %}
+            <a style="margin-right: 1%;" class="btn btn-light" href="{{ url_for('auth.edit_profile') }}">Edit Profile</a>
+            {% endif %}
+            {% if current_user.is_administrator() %}
+            <a class="btn btn-danger" href="{{ url_for('auth.edit_profile_admin', id=user.id) }}">Edit Profile [Admin]</a>
+            {% endif %}
+        </p>
+    </div>
+</div>
+
+{% if (user == current_user ) %}
+{% if (total_entries!=0) %}
+<div class="container" style="margin-top:7%;">
+  <h1 style="text-align: center;">Expenditure</h1>
+  <div class="card">
+    <div class="card-body" style="height: 400px;">
+        <canvas id="doughnut-chart"></canvas>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endif %}
+
+<div class="container col-lg-10 col-md-8 col-sm-11" style="margin-top:100px; margin-bottom:100px;">
+<h3 style="margin-right: 5%;font-weight: bold;">Posts by {{ user.username }}</h3>
+{% include '_posts.html' %}
+{% if pagination %}
+<div class="pagination justify-content-center" style="margin: 2%">
+    {{ macros.pagination_widget(pagination, '.user', username=user.username) }}
+</div>
+</div>
+
+
+{% if user == current_user %}
+<!-- Table of Information  -->
+<center>
+<div class="container">
+    <table class="table table-hover table-light" style="background: #0b0b67f2;">
+      <thead>
+        <tr>
+          <th style="font-size: 30px;text-align: center;" colspan="2">Your Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td>{{user.name}}</td>
+        </tr>
+        <tr>
+          <td>Username</td>
+          <td>{{user.username}}</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>{{user.email}}</td>
+        </tr>
+        <tr>
+          <td>Phone Number</td>
+          <td>{{user.phone}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</center>
+{% endif %}
+{% endif %}
+
+
+
+{% else %}
+<div class="container" style="position: absolute;top: 15%;width: 50%;margin-left: 25%;">
+    <center>
+        <h2 style="padding:0;">Please Login to see Profile</h2>
+        <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.login')}}">Login</a>
+        <a class='btn btn-primary m-lg-3 pl-3' href="{{url_for('auth.register',username=current_user.username)}}">Sign
+            up</a>
+    </center>
+</div>
+{% endif %}
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script>
+
+<script>
+         new Chart(document.getElementById("doughnut-chart"), {
+            type: 'doughnut',
+            data: {
+            labels: ['accomodation', 'credit card','electricity','TV','Education','Car','Two wheeler',
+            'Food','Gifts','Insurance','Medicare','Pets','Sports','Shopping','Tax','Vacation','Investment',
+            'Savings','Child care','Other'],
+            datasets: [
+                {
+                backgroundColor: ["rgb(204, 102, 102)", "rgb(230, 0, 230)","rgb(102, 102, 255)","rgb(0, 153, 51)","rgb(179, 179, 0)","rgb(255, 77, 148)", "rgb(77, 0, 153)", "rgb(51, 204, 204)", "rgb(51, 255, 119)", "rgb(204, 102, 255)","rgb(128, 128, 0)","rgb(102, 102, 153)","rgb(255, 153, 0)","rgb(0, 102, 204)","rgb(153, 153, 102)","rgb(102, 153, 153)","rgb(252, 174, 174)","rgb(0, 255, 153)","rgb(230, 230, 0)"],
+                
+                
+                data: ['{{accommodation_sum}}',"{{credit_sum}}","{{electricity_sum}}","{{tv_sum}}",
+                "{{education_sum}}","{{car_sum}}","{{twowheeler_sum}}","{{food_sum}}","{{gifts_sum}}",
+                "{{insurance_sum}}","{{medicare_sum}}","{{pet_sum}}","{{sports_sum}}","{{shopping_sum}}",
+                "{{tax_sum}}","{{vacation_sum}}","{{investment_sum}}",
+                "{{savings_sum}}","{{child_sum}}","{{other_sum}}"],
+                datalabels:{
+                display:false,
+                color:"black",
+                    },
+                },
+            ],
+            },
+            options: {
+                responsive: true, 
+                maintainAspectRatio: false
+            }
+            })
+</script>
+
+
+
+{% endblock %}

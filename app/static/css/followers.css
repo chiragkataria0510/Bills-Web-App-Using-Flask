@@ -1,0 +1,138 @@
+body{
+    background: white;
+}
+
+#welcome-section{
+    margin-top: 150px;
+}
+
+.page-header{
+    background: white;
+    padding: 1%;
+    text-align: center;
+}
+
+h2{
+    font-weight: bold;
+}
+
+.table{
+    margin: 2% 0;
+    background: white;
+    box-shadow: 2px 2px 10px #98a1afc7;
+}
+
+.image-div{
+    float: right;
+    width: 80%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.home-image{
+    height:100%;
+    border-radius: 5px;
+    object-fit: cover;
+    width:100%;
+}
+
+.navbar {
+    padding: 0 0 0.01rem;
+    background: white;
+    padding: 15px 0;
+    font-size: 20px;
+    box-shadow: 5px 5px 10px #292929c7;
+  }
+  .nav-item {
+    padding: 0px 10px 5px 5px;
+  }
+  .nav-link-login{
+    border-radius: 50px;
+    background: blue;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    font-size: 1.2rem;
+    font-family: 'Ubuntu';
+    color: #000;
+  }
+  .navbar-nav{
+    margin-right:1%;
+  }
+  .dropdown{
+    width: 80px;
+  }
+  .nav-link-icon{
+    font-size: 30px;
+    margin-left: 45px;
+    font-weight: bold;
+    color: blue;
+  }
+
+  .cir1{
+    background: rgb(196, 196, 253);
+    height: 270px;
+    width: 270px;
+    position: fixed;
+    top: -5%;
+    right: -5%;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.cir2{
+    background: rgb(196, 196, 253);
+    height: 270px;
+    width: 270px;
+    position: fixed;
+    bottom: -10%;
+    left: -7%;
+    border-radius: 50%;
+    z-index: -100;
+}
+
+.cir3{
+    background: rgb(153, 153, 255);
+    height: 150px;
+    width: 150px;
+    position: fixed;
+    bottom: -5%;
+    left: 10%;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+.cir4{
+    background: rgb(196, 196, 253);
+    height: 150px;
+    width: 150px;
+    position: fixed;
+    top: 5%;
+    left: -2%;
+    border-radius: 50%;
+    z-index: -999;
+}
+
+.cir5{
+    background: rgb(153, 153, 255);
+    height: 150px;
+    width: 150px;
+    position: fixed;
+    top: 2%;
+    right: 10%;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.cir6{
+    background: rgb(196, 196, 253);
+    height: 150px;
+    width: 150px;
+    position: fixed;
+    bottom: -5%;
+    right: -5%;
+    border-radius: 50%;
+    z-index: -999;
+}

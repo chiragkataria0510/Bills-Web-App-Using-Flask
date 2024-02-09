@@ -1,0 +1,14 @@
+BILLS REMINDER
+
+
+Hello, {{user.username}}
+
+        
+Your Note : {{note}}
+
+
+                    
+Note Given By the User
+
+
+copyright@bill-reminder

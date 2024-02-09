@@ -1,0 +1,61 @@
+body{
+    font-family: ubuntu;
+    background: #f7f7f7;
+}
+
+.btn{
+    border: 2px solid white;
+}
+
+.main-con{
+    margin-top: 100px;
+    background: white;
+    padding: 4%;
+    margin-bottom: 4%;
+    border: 2px solid #dedbdb;
+}
+
+h1,h2,h3{
+    text-align: center;
+    font-weight: bold;
+}
+
+.delete-btn{
+    width: 48%;
+    margin: 1% 0 1% 1%;
+}
+
+.submit-btn{
+    width: 48%;
+    margin: 1%;
+}
+
+label{
+    margin-right: 4%;
+}
+
+.comment-btn{
+    width: 40%;
+}
+
+.post-btn{
+    border: 2px solid white;
+}
+@media (min-width: 760px) and (max-width: 870px){
+    .delete-btn{
+        margin-right: 0;
+    }
+
+    .submit-btn{
+        margin-left: 0;
+    }
+}
+@media (max-width: 400px){
+    .delete-btn{
+        margin-right: 0;
+    }
+
+    .submit-btn{
+        margin-left: 0;
+    }
+}

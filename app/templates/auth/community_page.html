@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block head %}
+
+<!-- Page title -->
+<title>Community Page</title>
+<!-- Link to respective CSS stylesheet -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/search_style.css')}}">
+
+{% endblock %}
+
+{% block body %}
+<!-- Write Posts -->
+<div>
+  
+ <section id="welcome-section">
+        <div class="container-fluid grey-container" style="margin-top: 50px;">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="hero-content"> 
+                        <h1 class="welcome-text animated slideInLeft">
+                            Set &amp; Get</h1>
+                        <h1 class="welcome-text2">Community</h1> 
+                        <h6 style="color: gray;">
+                            We encourage you to share your knowledge, ask questions, participate in discussions and become an integral part of this little community. Together we can become better community leaders and provide our members with a much better experience.
+                        </h6> 
+                        <div class="container search-field col-lg-12 col-md-6 col-sm-12">
+                            <input type="text" name="searched_username" placeholder="Search your Query..." style="width: 70%;">
+                            <button type="button" name="search_submit" value="send" class="btn btn-success"><i class="fas fa-search"></i> Search</button>
+                            <br><br>
+                          </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="image-div">
+                        <img src="../../static/img/discussion.png" class="home-image" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<div  class="container mb-2" style="margin-top:4%;">
+{% if current_user.can(Permission.WRITE) %}
+  <form method="POST" class="ques-post">
+    <h2 class="comm-ques-heading">Have Questions regarding Personal Finance ?</h2>
+    {% import "bootstrap/wtf.html" as wtf %}
+    <form class="form form-horizontal" method="post" role="form">
+      {{ form.hidden_tag() }}
+      {{ wtf.form_errors(form, hiddens="only") }}
+
+      {{ wtf.form_field(form.body) }}
+      <center>
+      {{ wtf.form_field(form.submit, class="btn ques-btn") }}
+      </center>
+    </form>
+   </form>
+{% endif %} 
+</div>
+
+<center>
+<hr class="dashed-line">
+<div class="container" >
+  <ul class="nav nav-pills">
+      <li class='nav-item'{% if not show_followed %} class="active"{% endif %}>
+        <a class="btn btn-primary "  href="{{ url_for('.show_all') }}">All Comments</a>
+      </li>
+      {% if current_user.is_authenticated %}
+      <li class='nav-item'{% if show_followed %} class="active"{% endif %}>
+        <a class="btn btn-primary "  href="{{ url_for('.show_followed') }}">Only Followed</a>
+      </li>
+      {% endif %}
+  </ul>
+</div>
+</center>
+
+<!-- All  Posts -->
+<div class="container" style="margin-bottom: 4%;">
+{% include '_posts.html' %}
+
+<center style="margin-top: 2%;">
+<!-- Pagination  -->
+{% if pagination %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% import "_macros.html" as macros %}
+<div class="pagination justify-content-center">{{ macros.pagination_widget(pagination, 'main.community') }}
+</div>
+{% endif %}
+</div>
+</center>
+
+<footer class="site-footer container-fluid" style="padding: 0;"> 
+        <div class="wrap-size-lg container-fluid" style="padding: 35px;"> 
+            <h3>About SET &amp; GET</h3> 
+            <div class="row grid-spacing-sm"> 
+                <div class="footer-div col-lg-2 col-md-2 col-sm-6"> 
+                    <ul class="footer-nav"> 
+                        <li> 
+                            <a rel="nofollow noreferrer" href="mailto:set.get567@gmail.com"> Contact us </a> 
+                        </li> 
+                        <li> 
+                            <a href="https://github.com/apoorva-01/Bills-Web-App-Using-Flask"> Github Repository </a> 
+                        </li> 
+                    </ul> 
+                </div> 
+                <div class="footer-div col-lg-2 col-md-2 col-sm-6"> 
+                    <ul class="footer-nav"> 
+                        <li> 
+                            <a rel="nofollow noreferrer" target="_blank" href="https://www.linkedin.com/in/set-get-56486b219/"> About us </a> 
+                        </li> 
+                        <li> 
+                            <a rel="nofollow noreferrer" target="_blank" href="{{url_for('main.guide')}}"> Guide to Set&Get </a> 
+                        </li> 
+                    </ul> 
+                </div> 
+                <div class="footer-div col-lg-2 col-md-2 col-sm-6"> 
+                    <ul class="footer-nav"> 
+                        <li> 
+                            <a href="{{url_for('main.faq')}}"> FAQ's </a> 
+                        </li> 
+                        <li> 
+                            <a href="{{url_for('main.terms')}}"> Terms of Service </a> 
+                        </li> 
+                    </ul> 
+                </div> 
+                <div class="footer-div col-lg-2 col-md-2 col-sm-6"> 
+                    Follow Us On:-
+                    <ul class="footer-nav" style="display: flex;padding-left: 0;"> 
+                        <li> 
+                            <a href="https://www.facebook.com/profile.php?id=100063086880666"><i class="fab fa-facebook-square" style="font-size: 40px;color: blue;margin: 0 20px 0 0;"></i></a> 
+                        </li> 
+                        <li> 
+                            <a href="https://www.instagram.com/set_get_community/"><i class="fab fa-instagram" style="font-size: 40px;color: blue;margin: 0 20px;"></i></a> 
+                        </li> 
+                        <li> 
+                            <a href="https://twitter.com/SetGetCommunity"><i class="fab fa-twitter-square" style="font-size: 40px;color: blue;margin: 0 20px;"></i> </a> 
+                        </li> 
+                        <li> 
+                            <a href="https://www.linkedin.com/in/set-get-56486b219/"><i class="fab fa-linkedin" style="font-size: 40px;color: blue;margin: 0 20px;"></i></a> 
+                        </li> 
+                    </ul> 
+                </div> 
+            </div> 
+        </div> 
+    </footer>
+  
+  
+{% endblock %}

@@ -1,0 +1,87 @@
+/* Body style with backgroud image */
+body{
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    font-family:'Ubuntu';
+  }
+  /* navigation bar */
+  .navbar {
+    padding: 0 0 0.01rem;
+    background: white;
+    padding: 15px 0;
+    font-size: 20px;
+    box-shadow: 5px 5px 10px #292929c7;
+  }
+  .nav-item {
+    padding: 0px 10px 5px 5px;
+  }
+  .nav-link-login{
+    border-radius: 50px;
+    background: blue;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    font-size: 1.2rem;
+    font-family: 'Ubuntu';
+    color: #000;
+  }
+  .navbar-nav{
+    margin-right:1%;
+  }
+  .dropdown{
+    width: 80px;
+  }
+  .nav-link-icon{
+    font-size: 30px;
+    margin-left: 45px;
+    font-weight: bold;
+    color: blue;
+  }
+  
+      
+  /* Media query (Responsive for phones,tab and small laptops) */
+  @media (min-width: 991px) and (max-width: 1100px){
+    /* navigation bar */
+    .nav-item {
+        padding:1%;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 1.5rem;
+    }
+    .navbar-nav{
+        width: 100%;
+    }
+  }
+  @media (min-width: 490px) and (max-width: 990px) {
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 1.9rem;
+    }
+    .navbar {
+        padding: 1.3rem 0 1.3rem 1rem;
+    }
+    .navbar-collapse{
+        margin-left: 4%;
+    }
+  }
+  @media (min-width: 426px) and (max-width: 491px) {
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 321px) and (max-width: 425px){
+    .navbar-dark .navbar-nav .nav-link{
+        font-size: 1.4rem;
+    }
+  }
+  @media (max-width: 320px){
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 1.5rem;
+    }
+  }
+  

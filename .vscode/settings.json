@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "python.pythonPath": "C:\\Users\\Sourav Verma\\Desktop\\Backup\\venv\\Scripts\\python.exe",
+        "CELERY_IMPORTS": "app.tasks"
+    }
+}

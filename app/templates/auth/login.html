@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block head %}
+<!-- Link to respective CSS stylesheet -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+
+{% endblock %}
+{% block body %}
+{% from "_formhelpers.html" import render_field %}
+
+<div class="container main-container" >
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 0;">
+                <div class="image-div"> 
+                    <img src="../../static/img/login.png" class="home-image" alt="">  
+                    <div class="cir1"></div>
+                    <div class="cir2"></div>
+                    <div class="cir3"></div>
+                    <div class="cir4"></div>
+                    <div class="cir5"></div>
+                    <div class="cir6"></div>
+                </div>   
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 5% 2%;">
+                <div class="container col-lg-12 col-md-12 col-sm-12">
+                    <!-- Login Form if User not logged in  -->
+                    <h2><strong>Login</strong></h2>
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <ul class=flashes>
+                            {% for message in messages %}
+                            <li style="font-size:20px;list-style:none">{{ message }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                        {% endwith %}
+                        
+                        <form class="login-form" method="POST">
+                            {{ render_field(form.email, class="form-control") }}
+                            {{ render_field(form.password, class="form-control") }}
+                            <center>
+                                <button type="submit" class="btn btn-primary login-button">Login</button>
+                            </center>
+                        </form>
+                        <br>
+                    <p>New user? <a href="{{ url_for('auth.register')}}">Click here to register</a>.</p>
+                    <p><a  href="{{url_for('auth.password_reset_request')}}">Forgot Password</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

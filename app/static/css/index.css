@@ -1,0 +1,192 @@
+.container-fluid{
+    padding-top: 100px;
+    padding-left: 5%;
+    padding-bottom: 100px;
+    content: justify;
+}
+
+.grey-container{
+    background: #f7f7f7;
+    padding-left: 5%;
+}
+
+h1{
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+h6{
+    font-size: 20px;
+    margin-bottom: 35px;
+    color: gray;
+    font-family: 'ubuntu';
+}
+
+.started-button{
+    color: white;
+    border-radius: 50px;
+    background: blue;
+    border: 2px solid blue;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding: 12px;
+    margin: 10px;
+    outline: none;
+}
+
+.started-button:active {
+    outline: none;
+    border: none;
+}
+
+.started-button:focus {
+    outline:0;
+}
+
+.started-button:hover{
+    color: blue;
+    background: white;
+    border: 2px solid blue;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.guide-button{
+    background-color: rgb(32 164 115);
+    color:white;
+    border: 2px solid rgb(32 164 115);
+    border-radius: 50px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding: 12px;
+    margin: 10px;
+    outline: none;
+}
+.guide-button:hover{
+    color: rgb(32 164 115);
+    border-radius: 50px;
+    background: white;
+    border: 2px solid rgb(32 164 115);
+    padding-left: 35px;
+    padding-right: 35px;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.guide-button:active {
+    outline: none;
+    border: none;
+}
+
+.guide-button:focus {
+    outline:0;
+}
+
+.image-div{
+    float: right;
+    width: 80%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.home-image{
+    height:100%;
+    border-radius: 5px;
+    object-fit: cover;
+    width:100%;
+}
+
+.home-section{
+    margin-top: 0;
+    margin-left: 0;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+h2{
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+h3{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+h4{
+    font-size: 20px;
+    color: gray;
+}
+
+p{
+    font-size: 20px;
+}
+
+.footer-nav{
+    list-style-type: none;
+}
+
+li{
+    text-decoration: none;
+}
+
+.site-footer{
+    background: #d2e1f9;
+    padding: 0;
+}
+
+.grid-spacing-sm{
+    /* display: inline-flex; */
+    width: 100%;
+}
+
+.footer-div{
+    margin: 0 40px;
+}
+
+.wrap-size-lg{
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+@media (min-width: 376px) and (max-width: 425px){
+    .container-fluid{
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-bottom: 50px;
+    }
+    .grid-spacing-sm{
+        display: inline;
+        width: 100%;
+    }
+    .image-div{
+        width: 100%;
+        margin: 50px 10px;
+    }
+    .footer-div{
+        margin: 0;
+    }
+}
+
+@media (max-width: 375px){
+    .container-fluid{
+        padding-top: 50px;
+        padding-left: 20px;
+        padding-bottom: 50px;
+    }
+    .grid-spacing-sm{
+        display: inline;
+        width: 100%;
+    }
+    .image-div{
+        width: 100%;
+        margin: 60px 10px;
+    }
+    .footer-div{
+        margin: 0;
+    }
+}

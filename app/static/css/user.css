@@ -1,0 +1,48 @@
+.jumbotron{
+    background: #0b0b67f2;
+    color: white;
+}
+
+img{
+    margin: 0 6% 0 0;
+    box-shadow: 5px 5px 10px black;
+    border-radius: 50%;
+}
+
+.user-anchor{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+table{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px grey;
+    width: 70%;
+    background: #0b0b67f2;
+}
+
+.profile-container{
+    padding-left: 10%;
+    margin-top: 50px;
+}
+
+.post-btn{
+    border: 2px solid white;
+}
+
+@media (min-width: 376px) and (max-width: 425px){
+    .profile-container{
+        padding-left: 15%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 375px){
+    .profile-container{
+        padding-left: 10%;
+        margin-top: 0;
+    }
+}
