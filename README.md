@@ -47,39 +47,6 @@ What a user can do:
 ![Website Image](static/img/readme_pic6.jpg?raw=true "Title")
 
 
-## Authors
-
-Contributors names and contact info :
-
-Punerva Singh(Frontend Development)<br> 
-[@Linkedin](https://www.linkedin.com/in/punerva-singh-958305204)
-<br>
-[@Github](https://github.com/punervasingh)
-<br>
-
-
-
-Nayan Raina Kaul(Database Management)<br>
-[@Linkedin](http://linkedin.com/in/nayan-raina-kaul-905812202)
-<br>
-[@Github](https://github.com/nayanrainakaul)
-<br>
-
-
-Aakansha Kumari(Frontend Development)<br>
-[@Linkedin](https://www.linkedin.com/in/aakanksha-kumari-64013a210)
-<br>
-[@Github](https://github.com/aakanksha-198)
-<br>
-
-
-Apoorva Verma(Backend Development)<br>
-[@Linkedin](https://www.linkedin.com/in/apoorva-verma-aa045a202/)
-<br>
-[@Github](https://github.com/apoorva-01)
-<br>
-[@Resume](https://my-main-portfolio-website.herokuapp.com/)
-
 ## Set Up
 
 Take These Steps to configure the Project :
